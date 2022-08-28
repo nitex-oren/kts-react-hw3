@@ -1,0 +1,18 @@
+.input {
+  height: 84px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 0px 4px 120px 0px hsla(255, 5%, 69%, 0.15);
+  font-family: 'Eudoxus Sans', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 180%;
+  color: #afadb5;
+  &:focus {
+    border: 1px solid #518581;
+  }
+}
+
+.input_disabled {
+  opacity: 0.7;
+}
