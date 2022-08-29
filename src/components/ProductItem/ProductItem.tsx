@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 
 import Button from "@components/Button";
 import { ButtonColor } from "@components/Button";
+import Card from "@components/Card";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
@@ -17,8 +18,36 @@ interface IProduct {
   content: string;
 }
 const ProductItem = () => {
-  // Получаем из урла айди Product
-  // (id, поскольку записали :id в path роута)
+  const [allproducts, setAllProducts] = useState([]);
+  useEffect(() => {
+    const fetchAllproducts = async () => {
+      const result = await axios({
+        method: "get",
+        url: "https://fakestoreapi.com/products",
+      });
+      setAllProducts(
+        result.data.map(
+          (raw: {
+            id: number;
+            image: string;
+            title: string;
+            description: string;
+            category: string;
+            price: number;
+          }) => ({
+            id: raw.id,
+            image: raw.image,
+            title: raw.title,
+            subtitle: raw.description,
+            category: raw.category,
+            content: raw.price,
+          })
+        )
+      );
+    };
+    fetchAllproducts();
+  }, []);
+
   const { id } = useParams();
   const [product, setProduct] = useState<IProduct>();
   useEffect(() => {
@@ -36,12 +65,13 @@ const ProductItem = () => {
         category: raw.category,
         content: raw.price,
       });
-
-      // eslint-disable-next-line no-console
-      console.log("result", result.data);
     };
     fetch();
   }, [id]);
+  let relatedProducts = allproducts.filter(
+    (item: IProduct) => item.category === product?.category
+  );
+  relatedProducts.splice(3);
 
   return (
     <>
@@ -67,7 +97,30 @@ const ProductItem = () => {
           </Button>
         </div>
       </div>
-      <h2>Related Items</h2>
+      <h2 className={styles.related_title}>Related Items</h2>
+      <div className={styles.related_products}>
+        {relatedProducts.map(
+          (product: {
+            id: number;
+            image: string;
+            title: string;
+            subtitle: string;
+            category: string;
+            content: string;
+          }) => (
+            <Link to={`/product/${product.id}`}>
+              <Card
+                key={product.id}
+                image={product.image}
+                title={product.title}
+                subtitle={product.subtitle}
+                category={product.category}
+                content={product.content}
+              />
+            </Link>
+          )
+        )}
+      </div>
     </>
   );
 };

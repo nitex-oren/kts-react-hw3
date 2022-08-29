@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
 }
-.find-form {
+.find_form {
   position: relative;
   margin-right: 30px;
   flex-grow: 2;
@@ -35,23 +35,15 @@
   justify-content: space-between;
   padding: 2px;
   align-items: center;
-  .find-form__input {
+  .find_form__input {
     flex-grow: 2;
     padding-right: 170px;
     padding-left: 44px;
     background: url("../../assets/img/search.svg") no-repeat 8px center;
-    // background-size: auto 50%;
   }
 
-  .find-form__button {
+  .find_form__button {
     position: absolute;
     right: 2%;
   }
 }
-// .find-form::before {
-//   display: block;
-//   content: url;
-//   width: 100%;
-//   position: absolute;
-//   left: 2%;
-// }

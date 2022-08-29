@@ -5,7 +5,8 @@ import Card from "@components/Card";
 import HeaderMain from "@components/HeaderMain";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "./Products.scss";
+
+import styles from "./Products.module.scss";
 let productCount: number = 0;
 const Products = () => {
   const [products, setProducts] = useState([]);
@@ -35,8 +36,6 @@ const Products = () => {
         )
       );
       productCount = result.data.length;
-      // eslint-disable-next-line no-console
-      console.log("result", result);
     };
     fetch();
   }, []);
@@ -44,10 +43,10 @@ const Products = () => {
   return (
     <>
       <HeaderMain />
-      <div className="total-products">
+      <div className={styles.total_products}>
         Total Products <span>{productCount}</span>
       </div>
-      <div className="products-all">
+      <div className={styles.products_all}>
         {products.map(
           (product: {
             id: number;
