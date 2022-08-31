@@ -1,4 +1,3 @@
-import React from "react";
 import "./MultiDropdown.scss";
 import { useState } from "react";
 

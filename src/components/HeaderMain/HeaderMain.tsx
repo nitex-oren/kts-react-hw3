@@ -1,7 +1,6 @@
 import React from "react";
 
 import Button from "@components/Button";
-import { ButtonColor } from "@components/Button";
 import Input from "@components/Input";
 import MultiDropdown from "@components/MultiDropdown";
 import { Option } from "@components/MultiDropdown";
@@ -20,7 +19,8 @@ const HeaderMain = () => {
         <form className={styles.find_form}>
           <Input
             name="find_input"
-            onChange={(value: string) => alert(value)}
+            // eslint-disable-next-line no-console
+            onChange={console.log}
             placeholder="Начните набирать свой вопрос"
             className={styles.find_form__input}
           />

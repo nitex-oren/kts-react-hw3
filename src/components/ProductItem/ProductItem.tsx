@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Button from "@components/Button";
 import { ButtonColor } from "@components/Button";
 import Card from "@components/Card";
+import { ENDPOINTS } from "@config/endpoints";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
 
@@ -65,9 +66,10 @@ const ProductItem = () => {
     };
     fetch();
   }, [id]);
-  const relatedProducts = allproducts
-    .filter((item: IProduct) => item.category === product?.category )
-    .splice(3);
+  const relatedProducts = allproducts.filter(
+    (item: IProduct) => item.category === product?.category
+  );
+  relatedProducts.splice(3);
 
   return (
     <>

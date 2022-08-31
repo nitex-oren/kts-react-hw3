@@ -1,9 +1,9 @@
 import React from "react";
 
 import Loader from "@components/Loader";
+import { LoaderSize } from "@components/Loader";
 import classNames from "classnames";
 
-import { LoaderSize } from "../Loader";
 import "./Button.scss";
 export enum ButtonColor {
   /** Основная, акцентная кнопка */
@@ -11,7 +11,7 @@ export enum ButtonColor {
   /** Второстепенная кнопка */
   secondary = "secondary",
 }
-export type ButtonProps = React.PropsWithChildren<{
+type ButtonProps = React.PropsWithChildren<{
   /**
    * Если true, то внутри кнопки вместе с children отображается компонент Loader
    * Также кнопка должна переходить в состояние disabled
@@ -35,10 +35,6 @@ const Button: React.FC<ButtonProps> = ({
     { button_disabled: rest.disabled || loading },
     rest.className
   );
-
-  if (loading) {
-    rest.disabled = true;
-  }
 
   return (
     <button {...rest} className={cn} disabled={rest.disabled || loading}>

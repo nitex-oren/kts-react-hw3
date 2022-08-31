@@ -32,24 +32,23 @@ const Loader: React.FC<LoaderProps> = ({
   size = "m",
   className = "loader",
 }) => {
-  let cn = classNames(`${className}`, `loader_size-${size}`);
+  let cn = classNames(className, `loader_size-${size}`);
   if (!loading) {
     return null;
   }
-  
+
   return (
-      <svg className={cn} viewBox="0 0 50 50">
-        <circle
-          className="path"
-          cx="25"
-          cy="25"
-          r="20"
-          fill="none"
-          strokeWidth="6"
-        ></circle>
-      </svg>
-    );
-  }
+    <svg className={cn} viewBox="0 0 50 50">
+      <circle
+        className="path"
+        cx="25"
+        cy="25"
+        r="20"
+        fill="none"
+        strokeWidth="6"
+      ></circle>
+    </svg>
+  );
 };
 
 export default Loader;

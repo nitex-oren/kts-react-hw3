@@ -1,10 +1,10 @@
-import classNames from 'classnames';
-import './CheckBox.scss';
+import classNames from "classnames";
+import "./CheckBox.scss";
 
 /** Пропсы, которые принимает компонент CheckBox */
 export type CheckBoxProps = Omit<
   React.InputHTMLAttributes<HTMLInputElement>,
-  'onChange'
+  "onChange"
 > & {
   /** Вызывается при клике на чекбокс */
   onChange: (value: boolean) => void;
@@ -17,7 +17,7 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
   ...rest
 }) => {
   let cn = classNames(
-    'checkbox',
+    "checkbox",
     { input_disabled: rest.disabled },
     rest.className
   );
@@ -27,8 +27,6 @@ export const CheckBox: React.FC<CheckBoxProps> = ({
       type="checkbox"
       className={cn}
       checked={checked}
-      name="chekkk"
-      id="chekkk"
       onChange={(event) => onChange(event.target.checked)}
     />
   );

@@ -4,17 +4,13 @@ import classNames from "classnames";
 
 import styles from "./Card.module.scss";
 
-export type CardProps = {
-  image: string /** URL изображения */;
-
+type CardProps = React.HTMLProps<HTMLDivElement> & {
+  image: string;
   title: React.ReactNode;
-
-  subtitle: React.ReactNode /** Подзаголовок карточки */;
-  category?: React.ReactNode /**Категория карточки */;
-
-  content?: React.ReactNode /** Содержимое карточки (футер/боковая часть), может быть пустым */;
-
-  onClick?: React.MouseEventHandler /** Клик на карточку */;
+  subtitle: React.ReactNode;
+  category?: React.ReactNode;
+  content?: React.ReactNode;
+  onClick?: React.MouseEventHandler;
 };
 const Card: React.FC<CardProps> = ({
   image,
@@ -31,9 +27,7 @@ const Card: React.FC<CardProps> = ({
       <div
         className={styles.image}
         style={{ backgroundImage: `url(${image})` }}
-      >
-        {/* <img src={image} alt={image} /> */}
-      </div>
+      ></div>
       <p className={styles.category}>{category}</p>
       <h2 className={styles.title}>{title}</h2>
       <h3 className={styles.subtitle}>{subtitle}</h3>
