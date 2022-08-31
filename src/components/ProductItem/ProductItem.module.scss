@@ -1,3 +1,4 @@
+@import "@styles/variable.scss";
 .product_item {
   margin-top: 100px;
   display: flex;
@@ -23,38 +24,38 @@
   &__title {
     margin: 0;
     padding-top: 20px;
-    font-size: 2.44rem;
+    font-size: $fontSizeTitle;
     line-height: 130%;
-    color: #151411;
+    color: $fontColorPrimary;
   }
   &__category {
     margin: 0;
     padding-top: 10px;
     font-weight: 500;
-    font-size: 18px;
+    font-size: $fontSize;
     line-height: 180%;
-    color: #afadb5;
+    color: $fontColorSecondary;
   }
   &__color {
     margin: 0;
     padding-top: 30px;
     line-height: 130%;
-    color: #151411;
+    color: $fontColorPrimary;
   }
   &__subtitle {
     margin: 0;
     padding-top: 20px;
     font-weight: 500;
-    font-size: 1rem;
+    font-size: $fontSize;
     line-height: 180%;
-    color: #afadb5;
+    color: $fontColorSecondary;
   }
   &__price {
     margin: 0;
     padding-top: 30px;
-    font-size: 2.44rem;
+    font-size: $fontSizeTitle;
     line-height: 130%;
-    color: #151411;
+    color: $fontColorPrimary;
   }
 
   button {
@@ -104,8 +105,8 @@
 
 .related_title {
   padding: 50px 0 30px 0;
-  font-size: 2rem;
+  font-size: $fontSizeRelatedTitle;
   line-height: 130%;
-  letter-spacing: 0.01em;
-  color: #151411;
+  color: $fontColorPrimary;
+  margin: 0;
 }
