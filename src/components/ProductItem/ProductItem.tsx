@@ -21,10 +21,7 @@ const ProductItem = () => {
   const [allproducts, setAllProducts] = useState([]);
   useEffect(() => {
     const fetchAllproducts = async () => {
-      const result = await axios({
-        method: "get",
-        url: "https://fakestoreapi.com/products",
-      });
+      const result = await axios(ENDPOINTS.products);
       setAllProducts(
         result.data.map(
           (raw: {
