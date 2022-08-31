@@ -34,9 +34,10 @@ const Loader: React.FC<LoaderProps> = ({
 }) => {
   let cn = classNames(`${className}`, `loader_size-${size}`);
   if (!loading) {
-    return <></>;
-  } else {
-    return (
+    return null;
+  }
+  
+  return (
       <svg className={cn} viewBox="0 0 50 50">
         <circle
           className="path"
