@@ -1,3 +1,4 @@
+@import "@styles/variable.scss";
 .header {
   display: flex;
   flex-direction: column;
@@ -7,10 +8,10 @@
 .header__title {
   padding-top: 100px;
   margin: 0;
-  font-size: 3.5rem;
+  font-size: calc($fontSizeTitle + 20px);
   line-height: 130%;
   text-align: center;
-  color: #151411;
+  color: $fontColorPrimary;
 }
 
 .header__text {
@@ -18,9 +19,10 @@
   margin: 0;
   max-width: 600px;
   font-weight: 500;
+  font-size: $fontSize;
   line-height: 180%;
   text-align: center;
-  color: #afadb5;
+  color: $fontColorSecondary;
 }
 .header__find {
   width: 100%;

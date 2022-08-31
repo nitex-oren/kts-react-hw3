@@ -1,0 +1,5 @@
+@mixin vertTextClip {
+  white-space: nowrap;
+  overflow: clip;
+  text-overflow: ellipsis;
+}
