@@ -1,0 +1,49 @@
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header__title {
+  padding-top: 100px;
+  margin: 0;
+  font-size: 3.5rem;
+  line-height: 130%;
+  text-align: center;
+  color: #151411;
+}
+
+.header__text {
+  padding-top: 20px;
+  margin: 0;
+  max-width: 600px;
+  font-weight: 500;
+  line-height: 180%;
+  text-align: center;
+  color: #afadb5;
+}
+.header__find {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.find_form {
+  position: relative;
+  margin-right: 30px;
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 2px;
+  align-items: center;
+  .find_form__input {
+    flex-grow: 2;
+    padding-right: 170px;
+    padding-left: 44px;
+    background: url("../../assets/img/search.svg") no-repeat 8px center;
+  }
+
+  .find_form__button {
+    position: absolute;
+    right: 2%;
+  }
+}

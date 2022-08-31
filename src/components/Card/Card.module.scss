@@ -1,0 +1,57 @@
+.card {
+  font-family: "Eudoxus Sans";
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+
+  // justify-content: space-between;
+  .image {
+    width: 100%;
+    height: 360px;
+    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .category {
+    margin: 24px 0 0 0;
+    line-height: 130%;
+    color: #afadb5;
+  }
+  .title {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 14px 0 0 0;
+    font-size: 1.5rem;
+    line-height: 130%;
+    letter-spacing: 0.01em;
+    color: #151411;
+    // max-height: 110px;
+    // height: 100%;
+  }
+  .subtitle {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin: 6px 0 0 0;
+    font-weight: 500;
+    line-height: 180%;
+    // max-height: 100px;
+    // height: 100%;
+
+    color: #afadb5;
+  }
+  .subtitle a {
+    font-weight: 500;
+    line-height: 180%;
+    color: #afadb5;
+    text-decoration: none;
+  }
+  .content {
+    margin: 18px 0 0 0;
+    font-size: 1.5rem;
+    line-height: 130%;
+    color: #151411;
+  }
+}

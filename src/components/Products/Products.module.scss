@@ -1,0 +1,24 @@
+.total_products {
+  margin: 50px 0;
+  font-size: 2.44rem;
+  line-height: 130%;
+  color: #151411;
+  span {
+    font-size: 0.9rem;
+    line-height: 130%;
+    color: #518581;
+    vertical-align: middle;
+    padding-left: 26px;
+  }
+}
+.products_all {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+a,
+card {
+  width: 30%;
+  text-decoration: none;
+}
