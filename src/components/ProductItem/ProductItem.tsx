@@ -65,10 +65,9 @@ const ProductItem = () => {
     };
     fetch();
   }, [id]);
-  let relatedProducts = allproducts.filter(
-    (item: IProduct) => item.category === product?.category
-  );
-  relatedProducts.splice(3);
+  const relatedProducts = allproducts
+    .filter((item: IProduct) => item.category === product?.category )
+    .splice(3);
 
   return (
     <>
