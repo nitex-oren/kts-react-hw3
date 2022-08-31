@@ -41,7 +41,7 @@ const Button: React.FC<ButtonProps> = ({
   }
 
   return (
-    <button {...rest} className={cn}>
+    <button {...rest} className={cn} disabled={rest.disabled || loading}>
       <Loader loading={loading} size={LoaderSize.s} />
       {children}
     </button>
